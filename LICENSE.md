@@ -1,6 +1,6 @@
 8queens License
 ==================
-[//]: # ( 8queens - License.md (markdown) - v0.0. )
+[//]: # ( 8queens - License.md (markdown) - v0.0.1 )
 
 8queens is an open source project.
 
@@ -733,4 +733,3 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 &lt;<a href="http://www.gnu.org/philosophy/why-not-lgpl.html">http://www.gnu.org/philosophy/why-not-lgpl.html</a>&gt;.</p>
-

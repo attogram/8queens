@@ -14,7 +14,7 @@
     }
   ],
   "suggest": {
-    "attogram/attogram-framework": "8queens runs as a module within the Attogram Framework",
+    "attogram/attogram-framework": "8queens runs as a module within the Attogram Framework"
   },
   "keywords": [
     "8queens",

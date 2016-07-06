@@ -1,0 +1,27 @@
+{
+  "name": "attogram/8queens",
+  "description": "Play the 8 Queens puzzle. PHP / Javascript / Attogram Framework module.",
+  "type": "project",
+  "homepage": "https://github.com/attogram/8queens",
+  "license": "(MIT or GPL-3.0+)",
+  "require": {
+    "php": ">=5.3.3 || ^7.0"
+  },
+  "authors": [
+    {
+      "name": "8queens Developers",
+      "homepage": "https://github.com/attogram/8queens"
+    }
+  ],
+  "suggest": {
+    "attogram/attogram-framework": "8queens runs as a module within the Attogram Framework",
+  },
+  "keywords": [
+    "8queens",
+    "8 queens",
+    "eight queens",
+    "puzzle",
+    "chess",
+    "chess puzzle"
+  ]
+}

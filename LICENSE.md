@@ -36,7 +36,7 @@ THE SOFTWARE.
 
 <strong>8queens - GNU General Public License</strong>
 
-Copyright (C) 2016 Attogram Developers https://github.com/attogram/8queens/
+Copyright (C) 2016 8queens Developers https://github.com/attogram/8queens/
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

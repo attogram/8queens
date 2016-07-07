@@ -1,4 +1,5 @@
-<?php
+<?php // 8queens - Solutions page v0.0.1
+
 set_time_limit(120);
 
 include_once( __DIR__ . '/../solve/solve8queens.php' );

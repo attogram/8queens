@@ -1,4 +1,4 @@
-<?php
+<?php // 8queens - About page v0.0.1
 
 $this->page_header('About the 8 Queens puzzle');
 ?>

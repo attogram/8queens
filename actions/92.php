@@ -46,7 +46,7 @@ for( $x=1; $x <= 92; $x++ ) {
   $pos = list($a,$b,$c,$d,$e,$f,$g,$h) = explode(',',$s[$x-1]);
   print '<div class="bb">' . "$a, $b, $c, $d, $e, $f, $g" . '<br /><div id="b' . $x . '" class="bb"></div></div>';
   print '<script>var b' . $x . ' = new ChessBoard("b' . $x . '",'
-  . '{pieceTheme:"../web/img/chesspieces/wikipedia/{piece}.png",position:'
+  . '{pieceTheme:"../web/img/{piece}.png",position:'
   . "{'$a':'wQ','$b':'wQ','$c':'wQ','$d':'wQ','$e':'wQ','$f':'wQ','$g':'wQ','$h':'wQ'}"
   . '});</script>';
 }

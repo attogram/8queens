@@ -1,12 +1,32 @@
-<?php // 8queens - header v0.0.1
+<?php // 8queens - header v0.0.2
 
+  namespace Attogram;
 
-if( !isset($title) || !$title || !is_string($title) ) {
-  $title = 'Play 8 Queens';
-}
+  if( !isset($title) || !$title || !is_string($title) ) {
+    $title = '8 Queens'; // $this->site_name;
+  }
 
-?><!doctype html><html><head>
-<title><?php print $title; ?></title>
-<meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="<?php print $this->path; ?>/web/css.css">
-</head><body>
+  ?><!DOCTYPE html>
+  <html lang="en"><head><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="<?php print $this->path; ?>/web/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php print $this->path; ?>/web/attogram.css">
+  <link rel="stylesheet" type="text/css" href="<?php print $this->path; ?>/web/css.css">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <title><?php print $title; ?></title>
+  <script src="<?php print $this->path; ?>/web/jquery.min.js"></script>
+  <script src="<?php print $this->path; ?>/web/bootstrap/js/bootstrap.min.js"></script>
+  </head><body><noscript><div class="alert alert-danger">Please enable Javascript</div></noscript>
+  <?php
+
+  $navbar = $this->templates['navbar'];
+
+  if( attogram_fs::is_readable_file( $navbar, 'php' ) ) {
+    include($navbar);
+  } else {
+    $this->log->error('Missing navbar template: ' . $navbar);
+  }

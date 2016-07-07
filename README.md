@@ -9,7 +9,7 @@
 
 * Install the [Attogram Framework](https://github.com/attogram/attogram)
 
-* Move all files into new directory: `./modules/8queen/`
+* Move all 8queen files into new directory: `./modules/8queen/`
 
 * Enjoy!
 

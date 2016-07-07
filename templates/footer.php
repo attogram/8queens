@@ -1,7 +1,9 @@
 <?php // 8queens - footer v0.0.1
 ?>
 <footer>
-<div class="footer">
+<br />&nbsp;
+<br />
+<div class="footer" style="text-align:center;">
 <nobr><a href="<?php print $this->path; ?>/">Play 8 Queens</a></nobr>
 <nobr> &nbsp;|&nbsp; <a href="<?php print $this->path; ?>/about/">About the 8 Queens Puzzle</a></nobr>
 <nobr> &nbsp;|&nbsp; <a href="<?php print $this->path; ?>/solutions/">Finding solutions in PHP</a></nobr>

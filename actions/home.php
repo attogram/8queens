@@ -7,7 +7,7 @@ $this->page_header('Play 8 Queens - the classic chess puzzle')
 <script src="<?php print $this->path; ?>/web/cjs030/js/jquery-1.10.1.min.js"></script>
 <script src="<?php print $this->path; ?>/web/cjs030/js/chessboard-0.3.0.js"></script>
 
-<table border="0" cellpadding="0" cellspacing="0">
+<table border="0" cellpadding="0" cellspacing="0" style="margin: 0px auto;">
  <tr>
   <td valign="top" style="padding:10px 20px 0px 30px;">
 

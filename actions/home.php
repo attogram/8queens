@@ -1,5 +1,4 @@
-<?php
-
+<?php // 8queens - Home page v0.0.1
 
 $this->page_header('Play 8 Queens - the classic chess puzzle')
 
@@ -10,17 +9,15 @@ $this->page_header('Play 8 Queens - the classic chess puzzle')
 
 <table border="0" cellpadding="0" cellspacing="0">
  <tr>
-
   <td valign="top" style="padding:10px 20px 0px 30px;">
-    <div id="board1" style="width:350px"></div>
-    <div class="body">
-     <br /><br /> &nbsp; &nbsp; &nbsp; <small><a href="./">(restart game)</a></small>
-    </div>
-  </td>
 
+    <div id="board1" style="width:350px"></div>
+
+  </td>
   <td valign="top" style="padding:10px 0px 0px 0px;">
-   <b>Can you solve the <nobr><a href="about/">8 Queens puzzle</a>?</nobr></b>
-   <br />
+
+   <p><strong>Can you solve the <a href="about/">8 Queens puzzle</a>?</strong></p>
+
    <div id="status" style="background-color:#efd;padding:2px;">
     <ul>
     <li><span style="color:red;">NOT Solved yet</span>
@@ -28,19 +25,24 @@ $this->page_header('Play 8 Queens - the classic chess puzzle')
     <li><b>0</b> Queens under attack
     </ul>
    </div>
-   <br />
-   <div class="body"> How to play the 8 Queens Puzzle:
+
+
+   <div class="body">
+    How to play the 8 Queens Puzzle:
     <ul>
     <li>Drag 8 queens onto this chess board
     <li>No queen may be attacking another queen
     <li>Drag existing queens to change positions
     <li>Drop a queen off the board to remove it
     </ul>
-    How fast can you find a solution?  <br /><br />
-    Give up? See a <b><a href="./?solve">random solution</a></b>!
-   </div>
-  </td>
+    How fast can you find a solution?
+    <br /><br />
+    Give up? See a <strong><a href="./?solve">random solution</a></strong>!
 
+    <p><small><a href="./">(restart game)</a></small></p>
+   </div>
+
+  </td>
  </tr>
 </table>
 
@@ -59,11 +61,15 @@ var cfg = {
  draggable: true,
  dropOffBoard: 'trash',
  sparePieces: true,
-<?php if( isset($_GET['solve']) ) { ?>
- position: <?php print solve8queens(); ?>,
-<?php } elseif( isset($_GET['b']) ) { ?>
- position: <?php print htmlentities($_GET['b']); ?>,
-<?php } ?>
+<?php
+
+  if( isset($_GET['solve']) ) {
+    include_once( __DIR__ . '/../solve/solve8queens.php' );
+    print ' position: ' . solve8queens() . ",\n";
+  } elseif( isset($_GET['b']) ) {
+    print ' position: ' . htmlentities($_GET['b']) . ",\n";
+  }
+?>
  onChange: onChange,
 };
 var board1 = new ChessBoard('board1', cfg);
@@ -72,7 +78,7 @@ var board1 = new ChessBoard('board1', cfg);
   onChange( board1.position(), board1.position() );
 <?php } ?>
 
-<?php if( isset($_GET['solve']) ) { ?>
+  <?php if( isset($_GET['solve']) ) { ?>
 jQuery('#status').html('<ul><li><span style="color:green;"><b>RANDOM SOLUTION FOUND!</b></span><li>8 Queens on board<li>0 Queens under attack</ul>');
 <?php } ?>
 

@@ -1,6 +1,10 @@
 <?php
 set_time_limit(120);
 
+include_once( __DIR__ . '/../solve/solve8queens.php' );
+include_once( __DIR__ . '/../solve/solve8queens_2.php' );
+include_once( __DIR__ . '/../solve/solve8queens_3.php' );
+
 $this->page_header('8 Queens - Solutions');
 
 ?>
@@ -48,7 +52,7 @@ foreach( $s as $sol ) { print '<a target="_sol" href="../?b=' . urlencode($sol) 
 print '</div>';
 print '</pre><br /><hr />Method 1: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__ . '/../includes/solve8queens.php');
+highlight_file(__DIR__ . '/../solve/solve8queens.php');
 print '</div>';
 
 
@@ -76,7 +80,7 @@ foreach( $sols as $b ) {
 print '</div>';
 print '</pre><br /><hr />Method 2: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__ . '/../includes/solve8queens_2.php');
+highlight_file(__DIR__ . '/../solve/solve8queens_2.php');
 print '</div>';
 
 
@@ -89,7 +93,7 @@ print '<a name="3"></a>
 <br /> Absolutely the fastest method ;)';
 print '<br /><hr />Method 3: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__ . '/../includes/solve8queens_3.php');
+highlight_file(__DIR__ . '/../solve/solve8queens_3.php');
 print '</div>';
 print '</td></tr></table>';
 

@@ -2,7 +2,10 @@
 * Repository: https://github.com/attogram/8queens
 * Click version number to view a diff comparison of changes since the previous release
 
-## [Unreleased](https://github.com/attogram/8queens/compare/v0.0.1...HEAD)
+## [Unreleased](https://github.com/attogram/8queens/compare/v0.0.2...HEAD)
+
+## [v0.0.2](https://github.com/attogram/8queens/compare/v0.0.1...v0.0.2) - 2016-07-07
+- Clean up and refactoring
 
 ## [v0.0.1](https://github.com/attogram/8queens/compare/837dabc...v0.0.1) - 2016-07-06
 - Initial import

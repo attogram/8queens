@@ -738,7 +738,9 @@ Public License instead of this License.  But first, please read
 ---
 The 8queens distribution includes other Open Source software:
 
-* chessboard.js:
+* jQuery - MIT license - jquery.org/license
+
+* chessboard.js - MIT license
 
 Copyright 2013 Chris Oakman
 http://chessboardjs.com/

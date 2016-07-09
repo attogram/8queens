@@ -16,7 +16,7 @@ This is the 8queens Module for the [Attogram Framework](https://github.com/attog
 * You already installed the [Attogram Framework](https://github.com/attogram/attogram), didn't you?
 * Goto the top level of your install, then run:
 ```
-composer create-project attogram/8queens modules/8queens
+composer create-project attogram/8queens modules/play8queens
 ```
 
 # 8queens Module contents

@@ -5,6 +5,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/attogram/8queens/v/unstable)](https://packagist.org/packages/attogram/8queens)
 [![Total Downloads](https://poser.pugx.org/attogram/8queens/downloads)](https://packagist.org/packages/attogram/8queens)
 [![License](https://poser.pugx.org/attogram/8queens/license)](https://github.com/attogram/8queens/blob/master/LICENSE.md)
+[![Code Climate](https://codeclimate.com/github/attogram/8queens/badges/gpa.svg)](https://codeclimate.com/github/attogram/8queens)
+[![Issue Count](https://codeclimate.com/github/attogram/8queens/badges/issue_count.svg)](https://codeclimate.com/github/attogram/8queens)
 [`[CHANGELOG]`](https://github.com/attogram/8queens/blob/master/CHANGELOG.md)
 [`[TODO]`](https://github.com/attogram/8queens/blob/master/TODO.md)
 

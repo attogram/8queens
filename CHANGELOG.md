@@ -5,7 +5,7 @@
 ## [Unreleased](https://github.com/attogram/8queens/compare/v0.0.3...HEAD)
 
 ## [v0.0.3](https://github.com/attogram/8queens/compare/v0.0.2...v0.0.3) - 2016-07-09
-- Travis CI and phpunit setup
+- Travis CI and phpunit setup - https://travis-ci.org/attogram/8queens
 - updated README
 - done: TODO: fix /92/ via attogram framework 0.7.4
 

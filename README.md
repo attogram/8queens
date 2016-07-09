@@ -7,6 +7,7 @@
 [![License](https://poser.pugx.org/attogram/8queens/license)](https://github.com/attogram/8queens/blob/master/LICENSE.md)
 [![Code Climate](https://codeclimate.com/github/attogram/8queens/badges/gpa.svg)](https://codeclimate.com/github/attogram/8queens)
 [![Issue Count](https://codeclimate.com/github/attogram/8queens/badges/issue_count.svg)](https://codeclimate.com/github/attogram/8queens)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b471a1179412483e8c42eaaefe44c00d)](https://www.codacy.com/app/attogram-project/8queens?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=attogram/8queens&amp;utm_campaign=Badge_Grade)
 [`[CHANGELOG]`](https://github.com/attogram/8queens/blob/master/CHANGELOG.md)
 [`[TODO]`](https://github.com/attogram/8queens/blob/master/TODO.md)
 

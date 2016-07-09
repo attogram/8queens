@@ -1,15 +1,15 @@
-<?php // 8queens - AJAX status page v0.0.1
+<?php // 8queens - AJAX status page v0.0.2
 
 global $attacked;
 
 if( !isset($_GET['b']) || !$_GET['b'] ) { print 'ERROR - no move made'; exit; }
 
 $board = @$_GET['b'];
-$ba = @json_decode($board, $assoc=true);
-if( !$ba ) { $ba = array(); }
+$active_board = @json_decode($board, $assoc=true);
+if( !$active_board ) { $active_board = array(); }
 
-$queens_on_board = queens_on_board($ba);
-$queens_under_attack = queens_under_attack($ba);
+$queens_on_board = queens_on_board($active_board);
+$queens_under_attack = queens_under_attack($active_board);
 $moves = '?';
 if( is_array($attacked) && $queens_on_board > 1 ) {
   $att = ': '  . implode(', ', $attacked);
@@ -32,22 +32,22 @@ print '
 ';
 
 //////////////////////////////////////////////////////////////
-function queens_on_board($ba) {
-   if( !is_array($ba) ) { return 'ERROR'; }
-   return sizeof($ba);
+function queens_on_board($board) {
+   if( !is_array($board) ) { return 'ERROR'; }
+   return sizeof($board);
 }
 
 //////////////////////////////////////////////////////////////
-function queens_under_attack($ba) {
+function queens_under_attack($board) {
    global $attacked; // for display outside of this function
-   if( !is_array($ba) ) { return 'ERROR'; }
-   if( sizeof($ba) <= 1 ) { return '0'; } // 1 or 0 pieces? no worry
-   $bax = $ba; // 2nd compare array
+   if( !is_array($board) ) { return 'ERROR'; }
+   if( sizeof($board) <= 1 ) { return '0'; } // 1 or 0 pieces? no worry
+   $boardx = $board; // 2nd compare array
    $attacked = array();
-   while( list($position,$piece) = each($ba) ) {
+   while( list($position,$piece) = each($board) ) {
      if( in_array($position,$attacked) ) { continue; } // already found attack
-     reset($bax);
-     while( list($xposition,$xpiece) = each($bax) ) {
+     reset($boardx);
+     while( list($xposition,$xpiece) = each($boardx) ) {
        if( in_array($xposition,$attacked) ) { continue; } // already found attack
        if( $xposition == $position ) { continue; } // ignore self
        $col = $position[0]; $row = $position[1];

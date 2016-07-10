@@ -1,33 +1,52 @@
-<?php
-/////////////////////////////////////////////////////////////////////
-// Solve 8 Queens Puzzle
-// Use brute force, with queens randomly placed 1 per row/column
-// modified from https://gist.github.com/Xeoncross/1015646
-// modified from http://paulbutler.org/archives/n-queens-in-a-tweet/ 
-//
-function solve8queens( $n=8, $attempts=1000 ) {
- $i = 0; 
- $s = range(1,$n); // init the chess board
- while( $i <= $attempts ) {
-  shuffle($s); // randomly place 1 queen per row/column
-  $a = s($s,range(1,$n)); // test for attacks on rows/columns - permutations [1..n]
-  $b = s(s($s,range($n,1)),2*$n); // test for attacks on diagonals - permutations [n..1] with constant factor 2*n  
-  $c = array_merge($a,$b); // combine row/col and diagonals checks.  
-  if( count(array_unique($c))==2*$n ) { // if there are 2*n numbers in the array, then solution is found
+<?php // Attogram Framework - 8queens module - solve8queens v0.0.3
+
+/**
+ * Solve 8 Queens puzzle using brute force, with queens randomly placed 1 per row/column
+ * modified from https://gist.github.com/Xeoncross/1015646
+ * modified from http://paulbutler.org/archives/n-queens-in-a-tweet/
+ * @param int $boardSize
+ * @param int $attempts
+ * @return string    Solution in chessboad.js/JSON format
+ */
+function solve8queens( $boardSize = 8, $attempts = 1000 )
+{
+ $counter = 0;
+ $board = range( 1, $boardSize ); // init the chess board
+ while( $counter <= $attempts ) {
+  shuffle( $board ); // randomly place 1 queen per row/column
+  $rowsColumns = numeric_array_addition( $board, range( 1, $boardSize ) ); // test for attacks on rows/columns - permutations [1..n]
+  $diagonals = numeric_array_addition( numeric_array_addition( $board, range( $boardSize, 1 ) ), 2 * $boardSize ); // test for attacks on diagonals - permutations [n..1] with constant factor 2*n
+  $rowsColumnsDiagonals = array_merge( $rowsColumns, $diagonals ); // combine row/col and diagonals checks.
+  if( count( array_unique( $rowsColumnsDiagonals ) ) == 2 * $boardSize ) { // if there are 2*n numbers in the array, then solution is found
    // output in chessboad.js/JSON format, for 8x8 board:
-   $s[0] = 'a' . $s[0]; $s[1] = 'b' . $s[1]; $s[2] = 'c' . $s[2]; $s[3] = 'd' . $s[3];
-   $s[4] = 'e' . $s[4]; $s[5] = 'f' . $s[5]; $s[6] = 'g' . $s[6]; $s[7] = 'h' . $s[7];
-   $solution = join(":'wQ', ",$s);
-   return "{ $solution:'wQ' }" ;
+   $board[0] = 'a' . $board[0];
+   $board[1] = 'b' . $board[1];
+   $board[2] = 'c' . $board[2];
+   $board[3] = 'd' . $board[3];
+   $board[4] = 'e' . $board[4];
+   $board[5] = 'f' . $board[5];
+   $board[6] = 'g' . $board[6];
+   $board[7] = 'h' . $board[7];
+   $solution = join(":'wQ', ",$board);
+   return "{ $solution:'wQ' }";
   }
-  $i++;
+  $counter++;
  }
 } // end function solve8queens
 
-// add two arrays of numbers together
-function s($a,$b){
- if( !is_array($b) ) { $b = array_fill(0,count($a),$b); } // no second array? make one with all 0's
- foreach( $a as $i=>$k ) { $r[$i] = $k + $b[$i]; }
- return $r;
+/**
+ * add two arrays of numbers together
+ * @params array $array_a
+ * @params array $array_b (optional)
+ * @return array
+ */
+function numeric_array_addition( $array_a, $array_b )
+{
+ if( !is_array( $array_b ) ) { // no second array? make one with all 0's
+   $array_b = array_fill( 0, count( $array_a ), $array_b );
+ }
+ foreach( $array_a as $name => $value ) {
+   $result[ $name ] = $value + $array_b[ $name ];
+ }
+ return $result;
 }
-

@@ -1,125 +1,160 @@
-<?php
-// Find all 8 Queens solutions v0.0.2
+<?php // Attogram Framework - 8queens Module - solve8queens_2 v0.0.3
 // modified from http://rosettacode.org/wiki/N-queens_problem#PHP
 
-function solve8queens_2() {
-
-  $boardX = 8;
-
+/**
+ * Solve the 8 Queens puzzle
+ * @return array    A list of solutions
+*/
+function solve8queens_2()
+{
+  $board = 8;
   // create the different possible rows
-  for ($x = 0; $x < $boardX; ++$x){ $row[$x] = 1 << $x; }
-
-  // create all the possible orders of rows, will be equal to [boardY]!
+  for ( $x = 0; $x < $board; ++$x ) {
+    $row[ $x ] = 1 << $x;
+  }
+  // create all the possible orders of rows
   $solcount = 0;
   $solutions = array();
-  while ($row != false) {
-    if(checkBoard( $row, $boardX )){
-      if(!in_array( $row, $solutions )){
+  while( $row != false ) {
+    if( checkBoard( $row, $board ) ) {
+      if( !in_array( $row, $solutions ) ) {
         $solutions[] = $row;
-        $solutions = findRotation( $row, $boardX, $solutions );
+        $solutions = findRotation( $row, $board, $solutions );
         ++$solcount;
       }
     }
-    $row = pc_next_permutation($row);
+    $row = pc_next_permutation( $row );
   }
   return $solutions;
-} // end function
+}
 
-
-//////////////////////////////////////////////////
-
-// Function to rotate a board 90 degrees
-function rotateBoard( $p, $boardX ) {
- $a = 0;
- while ($a < count($p)) {
-  $b = strlen(decbin($p[$a]))-1;
-  $tmp[$b] = 1 << ($boardX - $a - 1);
-  ++$a;
+/**
+ * Rotate board 90 degrees
+ */
+function rotateBoard( $row, $board ) {
+ $check_row = 0;
+ while ($check_row < count($row)) {
+  $b = strlen(decbin($row[$check_row]))-1;
+  $tmp[$b] = 1 << ($board - $check_row - 1);
+  ++$check_row;
  }
  ksort($tmp);
  return $tmp;
 }
 
-// This function will find rotations of a solution
-function findRotation( $p, $boardX, $solutions ) {
- $tmp = rotateBoard( $p, $boardX );
+/**
+ * find rotations of a solution
+ */
+function findRotation( $row, $board, $solutions ) {
+ $tmp = rotateBoard( $row, $board );
  // Rotated 90
  if (in_array( $tmp, $solutions )) {} else { $solutions[] = $tmp; }
- $tmp = rotateBoard( $tmp, $boardX );
+ $tmp = rotateBoard( $tmp, $board );
  // Rotated 180
  if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
- $tmp = rotateBoard( $tmp, $boardX );
+ $tmp = rotateBoard( $tmp, $board );
  // Rotated 270
  if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
 
  // Reflected
- $tmp = array_reverse($p);
+ $tmp = array_reverse($row);
  if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
 
- $tmp = rotateBoard( $tmp, $boardX );
+ $tmp = rotateBoard( $tmp, $board );
  // Reflected and Rotated 90
  if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
 
- $tmp = rotateBoard( $tmp, $boardX );
+ $tmp = rotateBoard( $tmp, $board );
  // Reflected and Rotated 180
  if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
 
- $tmp = rotateBoard( $tmp, $boardX );
+ $tmp = rotateBoard( $tmp, $board );
  // Reflected and Rotated 270
  if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
 
  return $solutions;
 }
 
-// output board in chessboard.js/JSON format
-function renderBoard( $p, $boardX ) {
+/**
+ * output board in chessboard.js/JSON format
+ */
+function renderBoard( $row, $board ) {
  $sol = array();
- for ($y = 0; $y < $boardX; ++$y) {
-  for ($x = 0; $x < $boardX; ++$x) {
-   if ($p[$y] == 1 << $x) { $sol[] = numtoalpha($x) . ($y+1); }
+ for( $y = 0; $y < $board; ++$y ) {
+  for( $x = 0; $x < $board; ++$x ) {
+   if( $row[$y] == 1 << $x ) {
+     $sol[] = numtoalpha( $x ) . ( $y + 1 );
+   }
   }
  }
- $solution = join(":'wQ', ",$sol);
- return "{ $solution:'wQ' }" ;
+ $solution = join( ":'wQ', ", $sol );
+ return "{ $solution:'wQ' }";
 }
 
-function numtoalpha($n) {
-  switch($n) {
+/**
+ * number to chess board alphabet
+ * @param int $number
+ * @return string
+ */
+function numtoalpha( $number )
+{
+  switch( $number ) {
    default: return;
-   case '0': return 'a'; case '1': return 'b'; case '2': return 'c'; case '3': return 'd';
-   case '4': return 'e'; case '5': return 'f'; case '6': return 'g'; case '7': return 'h';
+   case '0': return 'a';
+   case '1': return 'b';
+   case '2': return 'c';
+   case '3': return 'd';
+   case '4': return 'e';
+   case '5': return 'f';
+   case '6': return 'g';
+   case '7': return 'h';
   }
 }
 
-//This function allows me to generate the next order of rows.
-function pc_next_permutation($p) {
-  $size = count($p) - 1;
+/**
+ * Generate the next order of rows
+ */
+function pc_next_permutation( $row )
+{
+  $size = count($row) - 1;
   // slide down the array looking for where we're smaller than the next guy
-  for ($i = $size - 1; $p[$i] >= $p[$i+1]; --$i) { }
+  for ($i = $size - 1; $row[$i] >= $row[$i+1]; --$i) { }
   // if this doesn't occur, we've finished our permutations
   // the array is reversed: (1, 2, 3, 4) => (4, 3, 2, 1)
-  if ($i == -1) { return false; }
+  if ($i == -1) {
+    return false;
+  }
   // slide down the array looking for a bigger number than what we found before
-  for ($j = $size; $p[$j] <= $p[$i]; --$j) { }
+  for ($j = $size; $row[$j] <= $row[$i]; --$j) { }
   // swap them
-  $tmp = $p[$i]; $p[$i] = $p[$j]; $p[$j] = $tmp;
+  $tmp = $row[$i]; $row[$i] = $row[$j]; $row[$j] = $tmp;
   // now reverse the elements in between by swapping the ends
-  for (++$i, $j = $size; $i < $j; ++$i, --$j) { $tmp = $p[$i]; $p[$i] = $p[$j]; $p[$j] = $tmp; }
-  return $p;
+  for (++$i, $j = $size; $i < $j; ++$i, --$j) {
+    $tmp = $row[$i]; $row[$i] = $row[$j]; $row[$j] = $tmp;
+  }
+  return $row;
 }
 
-// check the current state to see if there are any solutions
-function checkBoard( $p, $boardX ) {
-  $a = 0; // the row being checked
-  while ($a < count($p)) {
-    $b = 1;
-    while ($b < ($boardX - $a)){
-      $x = $p[$a+$b] << $b; // shift p[a+b], b bits left
-      $y = $p[$a+$b] >> $b; // shift p[a+b], b bits right
-      if ($p[$a] == $x | $p[$a] == $y) { return false; } // a queen is under attack
-      ++$b;
+/**
+ * check the current state to see if there are any solutions
+ * @param array $row
+ * @param array $board
+ * @return bool true if no queens under attack, false if a queen under attack
+*/
+function checkBoard( $row, $board )
+{
+  $check_row = 0; // the row being checked
+  while( $check_row < count( $row ) ) {
+    $bit_shift = 1;
+    while( $bit_shift < ( $board - $check_row ) ) {
+      $x = $row[ $check_row + $bit_shift ] << $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits left
+      $y = $row[ $check_row + $bit_shift ] >> $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits right
+      if( $row[ $check_row ] == $x | $row[ $check_row ] == $y ) {
+        return false; // a queen is under attack
+      }
+      ++$bit_shift;
     }
-    ++$a;
+    ++$check_row;
   }
-  return true;
+  return true; // no queens under attack
 }

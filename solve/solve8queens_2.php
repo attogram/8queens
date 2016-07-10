@@ -30,48 +30,56 @@ function solve8queens_2()
 
 /**
  * Rotate board 90 degrees
+ * @param array $row
+ * @param array $board
+ * @return array
  */
 function rotateBoard( $row, $board ) {
  $check_row = 0;
- while ($check_row < count($row)) {
-  $b = strlen(decbin($row[$check_row]))-1;
-  $tmp[$b] = 1 << ($board - $check_row - 1);
+ while( $check_row < count( $row ) ) {
+  $tmp[ strlen( decbin( $row[ $check_row ] ) ) - 1 ] = 1 << ( $board - $check_row - 1 );
   ++$check_row;
  }
- ksort($tmp);
+ ksort( $tmp );
  return $tmp;
 }
 
 /**
  * find rotations of a solution
+ * @param array $row
+ * @param array $board
+ * @param array $solutions
+ * @return array
  */
 function findRotation( $row, $board, $solutions ) {
- $tmp = rotateBoard( $row, $board );
- // Rotated 90
- if (in_array( $tmp, $solutions )) {} else { $solutions[] = $tmp; }
- $tmp = rotateBoard( $tmp, $board );
- // Rotated 180
- if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
- $tmp = rotateBoard( $tmp, $board );
- // Rotated 270
- if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
-
- // Reflected
- $tmp = array_reverse($row);
- if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
-
- $tmp = rotateBoard( $tmp, $board );
- // Reflected and Rotated 90
- if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
-
- $tmp = rotateBoard( $tmp, $board );
- // Reflected and Rotated 180
- if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
-
- $tmp = rotateBoard( $tmp, $board );
- // Reflected and Rotated 270
- if (in_array( $tmp, $solutions )){} else { $solutions[] = $tmp; }
-
+ $tmp = rotateBoard( $row, $board );  // Rotated 90
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
+ $tmp = rotateBoard( $tmp, $board );  // Rotated 180
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
+ $tmp = rotateBoard( $tmp, $board );  // Rotated 270
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
+ $tmp = array_reverse($row);  // Reflected
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
+ $tmp = rotateBoard( $tmp, $board );  // Reflected and Rotated 90
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
+ $tmp = rotateBoard( $tmp, $board );  // Reflected and Rotated 180
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
+ $tmp = rotateBoard( $tmp, $board );  // Reflected and Rotated 270
+ if( !in_array( $tmp, $solutions ) ) {
+   $solutions[] = $tmp;
+ }
  return $solutions;
 }
 
@@ -147,9 +155,9 @@ function checkBoard( $row, $board )
   while( $check_row < count( $row ) ) {
     $bit_shift = 1;
     while( $bit_shift < ( $board - $check_row ) ) {
-      $x = $row[ $check_row + $bit_shift ] << $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits left
-      $y = $row[ $check_row + $bit_shift ] >> $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits right
-      if( $row[ $check_row ] == $x | $row[ $check_row ] == $y ) {
+      $xcheck = $row[ $check_row + $bit_shift ] << $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits left
+      $ycheck = $row[ $check_row + $bit_shift ] >> $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits right
+      if( $row[ $check_row ] == $xcheck | $row[ $check_row ] == $ycheck ) {
         return false; // a queen is under attack
       }
       ++$bit_shift;

@@ -1,4 +1,4 @@
-# Attogram Framework 8queens Module v0.0.3
+# Attogram Framework 8queens Module v0.0.4
 
 [![Build Status](https://travis-ci.org/attogram/8queens.svg?branch=master)](https://travis-ci.org/attogram/8queens)
 [![Latest Stable Version](https://poser.pugx.org/attogram/8queens/v/stable)](https://packagist.org/packages/attogram/8queens)

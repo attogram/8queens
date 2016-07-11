@@ -2,7 +2,12 @@
 * Repository: https://github.com/attogram/8queens
 * Click version number to view a diff comparison of changes since the previous release
 
-## [Unreleased](https://github.com/attogram/8queens/compare/v0.0.3...HEAD)
+## [Unreleased](https://github.com/attogram/8queens/compare/v0.0.4...HEAD)
+
+## [v0.0.4](https://github.com/attogram/8queens/compare/v0.0.3...v0.0.4) - 2016-07-11
+- refactoring / code cleanup for PSR-1 + PSR-2 code conventions
+- codacy integration: https://www.codacy.com/app/attogram-project/8queens/dashboard
+- codeclimate integration: https://codeclimate.com/github/attogram/8queens
 
 ## [v0.0.3](https://github.com/attogram/8queens/compare/v0.0.2...v0.0.3) - 2016-07-09
 - Travis CI and phpunit setup - https://travis-ci.org/attogram/8queens

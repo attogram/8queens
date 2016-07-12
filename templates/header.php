@@ -1,9 +1,9 @@
-<?php // 8queens - header v0.0.2
+<?php // 8queens - header v0.0.3
 
-  namespace Attogram;
+  namespace attogram;
 
   if( !isset($title) || !$title || !is_string($title) ) {
-    $title = '8 Queens'; // $this->site_name;
+    $title = '8 Queens'; // $this->siteName;
   }
 
   ?><!DOCTYPE html>

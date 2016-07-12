@@ -1,4 +1,4 @@
-<?php // 8queens - Solutions page v0.0.1
+<?php // 8queens - Solutions page v0.0.2
 
 set_time_limit(120);
 
@@ -41,7 +41,7 @@ board rotations and reflections.
 $s = array(); $n = 3;
 //if( isset($_GET['n']) && is_numeric($_GET['n']) ) { $n = $_GET['n']; }
 print '<hr /> Method 1 Test run: ' . $n . ' runs, each run testing up to 1000 permutations.';
-$start = start_timer();
+$start = startTimer();
 for( $i=0; $i < $n; $i++ ) { $solution = solve8queens(); if( $solution ) { $s[] = $solution; } }
 $end = end_timer();
 $s = array_unique($s);
@@ -63,7 +63,7 @@ print '<br /><br />
 <br /> <b>Method 2</b>: Find all solutions, using bitwise math for board checks,
 <br /> first finds the 12 fundamental solutions, then the <a href="../92/">92</a> based on rotations/reflections.
 <hr /> Method 2 Test run: ';
-$start = start_timer();
+$start = startTimer();
 $s = solve8queens_2();
 $end = end_timer();
 print '<br /> Time: ' . $end . ' seconds';
@@ -100,7 +100,7 @@ print '</td></tr></table>';
 
 $this->page_footer();
 
-function start_timer() {
+function startTimer() {
     global $stime;
     $stime = microtime(1);
 }

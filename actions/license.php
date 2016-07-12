@@ -1,6 +1,6 @@
-<?php // 8queens - LICENSE page v0.0.1
+<?php // 8queens - LICENSE page v0.0.2
 
-namespace Attogram;
+namespace attogram;
 
 $f = __DIR__ . '/../LICENSE.md';
 

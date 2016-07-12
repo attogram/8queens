@@ -1,7 +1,7 @@
-<?php // 8queens - config v0.0.1
+<?php // 8queens - config v0.0.2
 
-namespace Attogram;
+namespace attogram;
 
 global $config;
 
-$config['site_name'] = 'Play 8 Queens';
+$config['siteName'] = 'Play 8 Queens';

@@ -1,6 +1,6 @@
-<?php // 8queens - 92 Solutions page v0.0.1
+<?php // 8queens - 92 Solutions page v0.0.2
 
-$this->page_header('92 solutions to the 8 Queens puzzle');
+$this->pageHeader('92 solutions to the 8 Queens puzzle');
 
 ?>
 <link rel="stylesheet" href="<?php print $this->path; ?>/web/cjs030/css/chessboard-0.3.0.css" />
@@ -54,4 +54,4 @@ for( $x=1; $x <= 92; $x++ ) {
 <br clear="all" />
 </td></tr></table>
 <?php
-$this->page_footer();
+$this->pageFooter();

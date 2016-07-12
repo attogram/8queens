@@ -1,6 +1,6 @@
-<?php // 8queens - Home page v0.0.1
+<?php // 8queens - Home page v0.0.2
 
-$this->page_header('Play 8 Queens - the classic chess puzzle')
+$this->pageHeader('Play 8 Queens - the classic chess puzzle')
 
 ?>
 <link rel="stylesheet" href="<?php print $this->path; ?>/web/cjs030/css/chessboard-0.3.0.css" />
@@ -93,4 +93,4 @@ jQuery(".spare-pieces-7492f img[src$='wP.png']").remove();
 </script>
 <?php
 
-$this->page_footer();
+$this->pageFooter();

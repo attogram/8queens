@@ -1,4 +1,4 @@
-<?php // 8queens - header v0.0.3
+<?php // 8queens - header v0.0.4
 
   namespace attogram;
 
@@ -25,7 +25,7 @@
 
   $navbar = $this->templates['navbar'];
 
-  if( attogram_fs::is_readable_file( $navbar, 'php' ) ) {
+  if( attogram_fs::isReadableFile( $navbar, 'php' ) ) {
     include($navbar);
   } else {
     $this->log->error('Missing navbar template: ' . $navbar);

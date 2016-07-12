@@ -1,6 +1,6 @@
-<?php // 8queens - About page v0.0.1
+<?php // 8queens - About page v0.0.2
 
-$this->page_header('About the 8 Queens puzzle');
+$this->pageHeader('About the 8 Queens puzzle');
 ?>
 
 <table border="0" cellpadding="0" cellspacing="0">
@@ -42,4 +42,4 @@ More:
 
 
 <?php
-$this->page_footer();
+$this->pageFooter();

@@ -1,4 +1,4 @@
-<?php // 8queens - Solutions page v0.0.2
+<?php // 8queens - Solutions page v0.0.3
 
 set_time_limit(120);
 
@@ -6,7 +6,7 @@ include_once( __DIR__ . '/../solve/solve8queens.php' );
 include_once( __DIR__ . '/../solve/solve8queens_2.php' );
 include_once( __DIR__ . '/../solve/solve8queens_3.php' );
 
-$this->page_header('8 Queens - Solutions');
+$this->pageHeader('8 Queens - Solutions');
 
 ?>
 
@@ -98,7 +98,7 @@ highlight_file(__DIR__ . '/../solve/solve8queens_3.php');
 print '</div>';
 print '</td></tr></table>';
 
-$this->page_footer();
+$this->pageFooter();
 
 function startTimer() {
     global $stime;

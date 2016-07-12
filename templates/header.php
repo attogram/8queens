@@ -25,7 +25,7 @@
 
   $navbar = $this->templates['navbar'];
 
-  if( attogram_fs::isReadableFile( $navbar, 'php' ) ) {
+  if( AttogramFS::isReadableFile( $navbar, 'php' ) ) {
     include($navbar);
   } else {
     $this->log->error('Missing navbar template: ' . $navbar);

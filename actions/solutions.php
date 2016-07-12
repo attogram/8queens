@@ -1,4 +1,4 @@
-<?php // 8queens - Solutions page v0.0.3
+<?php // 8queens - Solutions page v0.0.4
 
 set_time_limit(120);
 
@@ -64,7 +64,7 @@ print '<br /><br />
 <br /> first finds the 12 fundamental solutions, then the <a href="../92/">92</a> based on rotations/reflections.
 <hr /> Method 2 Test run: ';
 $start = startTimer();
-$s = solve8queens_2();
+$s = solve8queens2();
 $end = end_timer();
 print '<br /> Time: ' . $end . ' seconds';
 $sols = array();

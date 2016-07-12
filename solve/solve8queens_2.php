@@ -1,11 +1,11 @@
-<?php // Attogram Framework - 8queens Module - solve8queens_2 v0.0.3
+<?php // Attogram Framework - 8queens Module - solve8queens2 v0.0.4
 // modified from http://rosettacode.org/wiki/N-queens_problem#PHP
 
 /**
  * Solve the 8 Queens puzzle
  * @return array    A list of solutions
 */
-function solve8queens_2()
+function solve8queens2()
 {
   $board = 8;
   // create the different possible rows
@@ -23,7 +23,7 @@ function solve8queens_2()
         ++$solcount;
       }
     }
-    $row = pc_next_permutation( $row );
+    $row = nextPermutation( $row );
   }
   return $solutions;
 }
@@ -35,10 +35,10 @@ function solve8queens_2()
  * @return array
  */
 function rotateBoard( $row, $board ) {
- $check_row = 0;
- while( $check_row < count( $row ) ) {
-  $tmp[ strlen( decbin( $row[ $check_row ] ) ) - 1 ] = 1 << ( $board - $check_row - 1 );
-  ++$check_row;
+ $checkRow = 0;
+ while( $checkRow < count( $row ) ) {
+  $tmp[ strlen( decbin( $row[ $checkRow ] ) ) - 1 ] = 1 << ( $board - $checkRow - 1 );
+  ++$checkRow;
  }
  ksort( $tmp );
  return $tmp;
@@ -122,7 +122,7 @@ function numtoalpha( $number )
 /**
  * Generate the next order of rows
  */
-function pc_next_permutation( $row )
+function nextPermutation( $row )
 {
   $size = count($row) - 1;
   // slide down the array looking for where we're smaller than the next guy
@@ -151,18 +151,18 @@ function pc_next_permutation( $row )
 */
 function checkBoard( $row, $board )
 {
-  $check_row = 0; // the row being checked
-  while( $check_row < count( $row ) ) {
-    $bit_shift = 1;
-    while( $bit_shift < ( $board - $check_row ) ) {
-      $xcheck = $row[ $check_row + $bit_shift ] << $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits left
-      $ycheck = $row[ $check_row + $bit_shift ] >> $bit_shift; // shift row[ check_row + bit_shift ], bit_shift bits right
-      if( $row[ $check_row ] == $xcheck | $row[ $check_row ] == $ycheck ) {
+  $checkRow = 0; // the row being checked
+  while( $checkRow < count( $row ) ) {
+    $bitShift = 1;
+    while( $bitShift < ( $board - $checkRow ) ) {
+      $xcheck = $row[ $checkRow + $bitShift ] << $bitShift; // shift row[ checkRow + bitShift ], bitShift bits left
+      $ycheck = $row[ $checkRow + $bitShift ] >> $bitShift; // shift row[ checkRow + bitShift ], bitShift bits right
+      if( $row[ $checkRow ] == $xcheck | $row[ $checkRow ] == $ycheck ) {
         return false; // a queen is under attack
       }
-      ++$bit_shift;
+      ++$bitShift;
     }
-    ++$check_row;
+    ++$checkRow;
   }
   return true; // no queens under attack
 }

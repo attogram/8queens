@@ -1,4 +1,4 @@
-<?php // Attogram Framework - 8queens module - solve8queens v0.0.3
+<?php // Attogram Framework - 8queens module - solve8queens v0.0.4
 
 /**
  * Solve 8 Queens puzzle using brute force, with queens randomly placed 1 per row/column
@@ -36,17 +36,17 @@ function solve8queens( $boardSize = 8, $attempts = 1000 )
 
 /**
  * add two arrays of numbers together
- * @params array $array_a
- * @params array $array_b (optional)
+ * @params array $arrayA
+ * @params array $arrayB (optional)
  * @return array
  */
-function numeric_array_addition( $array_a, $array_b )
+function numeric_array_addition( $arrayA, $arrayB )
 {
- if( !is_array( $array_b ) ) { // no second array? make one with all 0's
-   $array_b = array_fill( 0, count( $array_a ), $array_b );
+ if( !is_array( $arrayB ) ) { // no second array? make one with all 0's
+   $arrayB = array_fill( 0, count( $arrayA ), $arrayB );
  }
- foreach( $array_a as $name => $value ) {
-   $result[ $name ] = $value + $array_b[ $name ];
+ foreach( $arrayA as $name => $value ) {
+   $result[ $name ] = $value + $arrayB[ $name ];
  }
  return $result;
 }

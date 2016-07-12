@@ -1,6 +1,6 @@
 <?php // 8queens - header v0.0.4
 
-  namespace attogram;
+  namespace Attogram;
 
   if( !isset($title) || !$title || !is_string($title) ) {
     $title = '8 Queens'; // $this->siteName;

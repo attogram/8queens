@@ -1,6 +1,6 @@
 <?php // 8queens - config v0.0.2
 
-namespace attogram;
+namespace Attogram;
 
 global $config;
 

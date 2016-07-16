@@ -1,4 +1,4 @@
-<?php // 8queens - AJAX status page v0.0.4
+<?php // 8queens - AJAX status page v0.0.5
 
 global $attacked;
 
@@ -8,7 +8,7 @@ if (!isset($_GET['b']) || !$_GET['b']) {
 }
 
 $board = @$_GET['b'];
-$active_board = @json_decode($board, $assoc=true);
+$active_board = @json_decode($board, true);
 if (!$active_board) {
     $active_board = array();
 }
@@ -18,18 +18,18 @@ $queens_under_attack = queens_under_attack($active_board);
 $moves = '?';
 
 $att = '';
-if( is_array($attacked) && $queens_on_board > 1 ) {
+if (is_array($attacked) && $queens_on_board > 1) {
     $att = ': '  . implode(', ', $attacked);
 }
 
 $solution = '<span style="color:red;">NOT Solved yet</span>';
-if( $queens_on_board == 8 && $queens_under_attack == 0 ) {
+if ($queens_on_board == 8 && $queens_under_attack == 0) {
     $solution = '<span style="color:green;font-weight:bold;">Solution Found!  Congrats Human!!</span>';
 }
 
 print '<ul><li>'.$solution.'</li>'
     .'<li><b>'.$queens_on_board.'</b> Queens on board</li>'
-    .'<li><b>'.$queens_under_attack.'</b> Queens under attack' . $att . '</ul>';
+    .'<li><b>'.$queens_under_attack.'</b> Queens under attack'.$att.'</ul>';
 
 function queens_on_board($board)
 {
@@ -75,7 +75,7 @@ function queens_under_attack( $board )
             if (abs(alpha2num($col) - alpha2num($xcol)) == abs($row - $xrow)) { // check diagonals
                 $attacked[] = $position;
                 $attacked[] = $xposition;
-                $attacked = array_unique( $attacked );
+                $attacked = array_unique($attacked);
                 continue;
             }
         }

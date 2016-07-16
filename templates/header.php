@@ -1,4 +1,5 @@
-<?php // 8queens - header v0.0.4
+<?php
+// 8queens - header v0.0.4
 
   namespace Attogram;
 

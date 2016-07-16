@@ -1,4 +1,5 @@
-<?php // 8queens - AJAX status page v0.0.7
+<?php
+// 8queens - AJAX status page v0.0.7
 
 global $attacked;
 

@@ -1,4 +1,5 @@
-<?php // Attogram Framework - 8queens module - solve8queens v0.0.5
+<?php
+// Attogram Framework - 8queens module - solve8queens v0.0.5
 
 /**
  * Solve 8 Queens puzzle using brute force, with queens randomly placed 1 per row/column

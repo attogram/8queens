@@ -1,4 +1,5 @@
-<?php // 8queens - Home page v0.0.4
+<?php
+// 8queens - Home page v0.0.4
 
 $this->pageHeader('Play 8 Queens - the classic chess puzzle')
 
@@ -75,13 +76,17 @@ if (isset($_GET['solve'])) {
 };
 var board1 = new ChessBoard('board1', cfg);
 
-<?php if (isset($_GET['b'])) { ?>
-  onChange( board1.position(), board1.position() );
-<?php } ?>
+<?php
+if (isset($_GET['b'])) {
+    ?>onChange( board1.position(), board1.position() );
+<?php
+}
 
-  <?php if (isset($_GET['solve'])) { ?>
-jQuery('#status').html('<ul><li><span style="color:green;"><b>RANDOM SOLUTION FOUND!</b></span><li>8 Queens on board<li>0 Queens under attack</ul>');
-<?php } ?>
+if (isset($_GET['solve'])) {
+    ?>jQuery('#status').html('<ul><li><span style="color:green;"><b>RANDOM SOLUTION FOUND!</b></span><li>8 Queens on board<li>0 Queens under attack</ul>');
+<?php
+}
+?>
 
 jQuery('.spare-pieces-top-4028b').remove(); // hide top black spare pieces
 jQuery(".spare-pieces-7492f img[src$='wK.png']").remove(); // hide all white sparece pieces except queen...

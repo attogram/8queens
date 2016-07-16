@@ -1,4 +1,5 @@
-<?php // 8queens - 92 Solutions page v0.0.3
+<?php
+// 8queens - 92 Solutions page v0.0.3
 
 $this->pageHeader('92 solutions to the 8 Queens puzzle');
 

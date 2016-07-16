@@ -1,4 +1,5 @@
-<?php // 8queens - Solutions page v0.0.5
+<?php
+// 8queens - Solutions page v0.0.6
 
 set_time_limit(120);
 
@@ -75,7 +76,7 @@ $end = end_timer();
 print '<br /> Time: '.$end.' seconds';
 $sols = array();
 foreach ($s as $sol) {
-    $b = renderBoard($sol,8);
+    $b = renderBoard($sol, 8);
     $sols[] = '<a target="_sol" href="../?b='.urlencode($b).'">'.$b.'</a>';
 }
 sort($sols);
@@ -104,14 +105,16 @@ print '</td></tr></table>';
 
 $this->pageFooter();
 
-function startTimer() {
+function startTimer()
+{
     global $stime;
     $stime = microtime(true);
 }
 
-function end_timer() {
+function end_timer()
+{
     global $stime;
     $end = microtime(true);
     $diff = round($end - $stime, 18);
-    return round($diff,5);
+    return round($diff, 5);
 }

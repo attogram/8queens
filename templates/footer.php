@@ -1,4 +1,5 @@
-<?php // 8queens - footer v0.0.2
+<?php
+// 8queens - footer v0.0.2
 ?>
 <footer><div class="footer" style="text-align:center;">
 <nobr><a href="<?php print $this->path; ?>/">Play 8 Queens</a></nobr>

@@ -1,4 +1,5 @@
-<?php // Attogram Framework - 8queens Module - solve8queens2 v0.0.5
+<?php
+// Attogram Framework - 8queens Module - solve8queens2 v0.0.5
 // modified from http://rosettacode.org/wiki/N-queens_problem#PHP
 
 /**

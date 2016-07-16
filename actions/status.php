@@ -1,4 +1,4 @@
-<?php // 8queens - AJAX status page v0.0.6
+<?php // 8queens - AJAX status page v0.0.7
 
 global $attacked;
 
@@ -51,7 +51,7 @@ function queens_under_attack($board)
     $boardx = $board; // 2nd compare array
     $attacked = array();
     while (list($position,) = each($board)) {
-        if (in_array($position,$attacked)) {
+        if (in_array($position, $attacked)) {
             continue; // already found attack
         }
         reset($boardx);

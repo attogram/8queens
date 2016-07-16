@@ -1,5 +1,5 @@
 <?php
-// Attogram Framework - 8queens Module - solve8queens2 v0.0.5
+// Attogram Framework - 8queens Module - solve8queens2 v0.0.6
 // modified from http://rosettacode.org/wiki/N-queens_problem#PHP
 
 /**
@@ -35,9 +35,9 @@ function solve8queens2()
  * @param array $board
  * @return array
  */
-function rotateBoard( $row, $board ) {
+function rotateBoard($row, $board) {
     $checkRow = 0;
-    while ($checkRow < count($row) ) {
+    while ($checkRow < count($row)) {
         $tmp[strlen(decbin($row[$checkRow])) - 1] = 1 << ($board - $checkRow - 1);
         ++$checkRow;
     }
@@ -90,9 +90,9 @@ function findRotation($row, $board, $solutions)
  */
 function renderBoard($row, $board) {
     $sol = array();
-    for( $y = 0; $y < $board; ++$y ) {
-        for( $x = 0; $x < $board; ++$x ) {
-            if( $row[$y] == 1 << $x ) {
+    for ($y = 0; $y < $board; ++$y) {
+        for ($x = 0; $x < $board; ++$x) {
+            if ($row[$y] == 1 << $x) {
                 $sol[] = numtoalpha($x) . ($y + 1);
             }
         }

@@ -1,5 +1,5 @@
 <?php
-// Attogram Framework - 8queens Module - solve8queens2 v0.0.6
+// Attogram Framework - 8queens Module - solve8queens2 v0.0.7
 // modified from http://rosettacode.org/wiki/N-queens_problem#PHP
 
 /**
@@ -18,7 +18,7 @@ function solve8queens2()
     $solutions = array();
     while ($row != false) {
         if (checkBoard($row, $board)) {
-            if (!in_array($row, $solutions) ) {
+            if (!in_array($row, $solutions)) {
                 $solutions[] = $row;
                 $solutions = findRotation($row, $board, $solutions);
                 ++$solcount;
@@ -35,7 +35,8 @@ function solve8queens2()
  * @param array $board
  * @return array
  */
-function rotateBoard($row, $board) {
+function rotateBoard($row, $board)
+{
     $checkRow = 0;
     while ($checkRow < count($row)) {
         $tmp[strlen(decbin($row[$checkRow])) - 1] = 1 << ($board - $checkRow - 1);
@@ -59,7 +60,7 @@ function findRotation($row, $board, $solutions)
         $solutions[] = $tmp;
     }
     $tmp = rotateBoard($tmp, $board);  // Rotated 180
-    if (!in_array($tmp, $solutions) ) {
+    if (!in_array($tmp, $solutions)) {
         $solutions[] = $tmp;
     }
     $tmp = rotateBoard($tmp, $board);  // Rotated 270
@@ -76,9 +77,9 @@ function findRotation($row, $board, $solutions)
     }
     $tmp = rotateBoard($tmp, $board);  // Reflected and Rotated 180
     if (!in_array($tmp, $solutions)) {
-      $solutions[] = $tmp;
+        $solutions[] = $tmp;
     }
-    $tmp = rotateBoard( $tmp, $board);  // Reflected and Rotated 270
+    $tmp = rotateBoard($tmp, $board);  // Reflected and Rotated 270
     if (!in_array($tmp, $solutions)) {
         $solutions[] = $tmp;
     }
@@ -108,26 +109,26 @@ function renderBoard($row, $board) {
  */
 function numtoalpha($number)
 {
-  switch($number) {
-      default:
-          return;
-      case '0':
-          return 'a';
-      case '1':
-          return 'b';
-      case '2':
-          return 'c';
-      case '3':
-          return 'd';
-      case '4':
-          return 'e';
-      case '5':
-          return 'f';
-      case '6':
-          return 'g';
-      case '7':
-          return 'h';
-  }
+    switch ($number) {
+        default:
+            return;
+        case '0':
+            return 'a';
+        case '1':
+            return 'b';
+        case '2':
+            return 'c';
+        case '3':
+            return 'd';
+        case '4':
+            return 'e';
+        case '5':
+            return 'f';
+        case '6':
+            return 'g';
+        case '7':
+            return 'h';
+    }
 }
 
 /**
@@ -171,7 +172,7 @@ function checkBoard($row, $board)
     $checkRow = 0; // the row being checked
     while ($checkRow < count($row)) {
         $bitShift = 1;
-        while( $bitShift < ($board - $checkRow) ) {
+        while ($bitShift < ($board - $checkRow)) {
             $xcheck = $row[$checkRow + $bitShift] << $bitShift; // shift row[ checkRow + bitShift ], bitShift bits left
             $ycheck = $row[$checkRow + $bitShift] >> $bitShift; // shift row[ checkRow + bitShift ], bitShift bits right
             if ($row[$checkRow] == $xcheck | $row[$checkRow] == $ycheck) {

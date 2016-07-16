@@ -1,5 +1,5 @@
 <?php
-// Attogram Framework - 8queens Module - Base Test v0.0.2
+// Attogram Framework - 8queens Module - Base Test v0.0.3
 
 use PHPUnit\Framework\TestCase;
 
@@ -10,5 +10,4 @@ class BaseTest extends PHPUnit\Framework\TestCase
     {
         $this->assertTrue(true, 'true not true!');
     }
-
 }

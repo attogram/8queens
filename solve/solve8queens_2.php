@@ -1,5 +1,5 @@
 <?php
-// Attogram Framework - 8queens Module - solve8queens2 v0.0.7
+// Attogram Framework - 8queens Module - solve8queens2 v0.0.8
 // modified from http://rosettacode.org/wiki/N-queens_problem#PHP
 
 /**
@@ -32,7 +32,7 @@ function solve8queens2()
 /**
  * Rotate board 90 degrees
  * @param array $row
- * @param array $board
+ * @param int $board
  * @return array
  */
 function rotateBoard($row, $board)
@@ -49,7 +49,7 @@ function rotateBoard($row, $board)
 /**
  * find rotations of a solution
  * @param array $row
- * @param array $board
+ * @param int $board
  * @param array $solutions
  * @return array
  */
@@ -89,7 +89,8 @@ function findRotation($row, $board, $solutions)
 /**
  * output board in chessboard.js/JSON format
  */
-function renderBoard($row, $board) {
+function renderBoard($row, $board)
+{
     $sol = array();
     for ($y = 0; $y < $board; ++$y) {
         for ($x = 0; $x < $board; ++$x) {

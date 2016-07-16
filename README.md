@@ -30,33 +30,33 @@ composer create-project attogram/8queens modules/play8queens
 
 ### Public Actions
 
- * `actions/home.php` - 8queens home page
- * `actions/license.php` - 8queens license page
- * `actions/readme.php` - 8qeens readme page
- * `actions/about.php` - 8queens about page
- * `actions/solutions.php` - Finding solutions in PHP page
- * `actions/92.php` - The 92 solutions page
- * `actions/status.php` - AJAX board status script
+* `actions/home.php` - 8queens home page
+* `actions/license.php` - 8queens license page
+* `actions/readme.php` - 8qeens readme page
+* `actions/about.php` - 8queens about page
+* `actions/solutions.php` - Finding solutions in PHP page
+* `actions/92.php` - The 92 solutions page
+* `actions/status.php` - AJAX board status script
 
 ### Configurations
 
- * `config/8queens_config.php` - Attogram config for 8queens site
+* `config/8queens_config.php` - Attogram Framework config for 8queens site
 
 ### Public Files
 
- * `public/cjs030/css/*` - chessboard.js CSS Files
- * `public/cjs030/js/*` - chessboard.js javascript Files
- * `public/img/*.png` - images of chess pieces
- * `public/css.css` - 8queens global CSS file
+* `public/cjs030/css/*` - chessboard.js CSS Files
+* `public/cjs030/js/*` - chessboard.js javascript Files
+* `public/img/*.png` - images of chess pieces
+* `public/css.css` - 8queens global CSS file
 
-* Templates:
+### Templates
 
- * `templates/header.php` - Page header, overriding Attogram default header
- * `templates/footer.php` - Page footer, overriding Attogram default footer
+* `templates/header.php` - Page header, overriding Attogram default header
+* `templates/footer.php` - Page footer, overriding Attogram default footer
 
 ### Misc
 
- * `tests/` - phpunit tests
- * `solve/solve8queens.php` - Randomly solve the 8queens puzzle
- * `solve/solve8queens_2.php` - Not so randomly solve the 8queens puzzle
- * `solve/solve8queens_3.php` - The solutions for the 8queens puzzle
+* `tests/*` - phpunit tests
+* `solve/solve8queens.php` - Randomly solve the 8queens puzzle
+* `solve/solve8queens_2.php` - Not so randomly solve the 8queens puzzle
+* `solve/solve8queens_3.php` - The solutions for the 8queens puzzle

@@ -1,4 +1,4 @@
-<?php // 8queens - AJAX status page v0.0.5
+<?php // 8queens - AJAX status page v0.0.6
 
 global $attacked;
 
@@ -39,7 +39,7 @@ function queens_on_board($board)
     return sizeof($board);
 }
 
-function queens_under_attack( $board )
+function queens_under_attack($board)
 {
     global $attacked; // for display outside of this function
     if (!is_array($board)) {

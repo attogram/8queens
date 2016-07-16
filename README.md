@@ -18,8 +18,7 @@ This is the 8queens Module for the
 
 ## Installing the 8queens Module
 
-* You already installed the
-[Attogram Framework](https://github.com/attogram/attogram), didn't you?
+* You already installed the [Attogram Framework](https://github.com/attogram/attogram), didn't you?
 * Goto the top level of your install, then run:
 
 ```

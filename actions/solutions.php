@@ -1,10 +1,10 @@
-<?php // 8queens - Solutions page v0.0.4
+<?php // 8queens - Solutions page v0.0.5
 
 set_time_limit(120);
 
-include_once( __DIR__ . '/../solve/solve8queens.php' );
-include_once( __DIR__ . '/../solve/solve8queens_2.php' );
-include_once( __DIR__ . '/../solve/solve8queens_3.php' );
+include_once(__DIR__.'/../solve/solve8queens.php');
+include_once(__DIR__.'/../solve/solve8queens_2.php');
+include_once(__DIR__.'/../solve/solve8queens_3.php');
 
 $this->pageHeader('8 Queens - Solutions');
 
@@ -38,25 +38,31 @@ board rotations and reflections.
 <br /> Constrain the starting board positions to only those with 1 queen per each row and column.
 <br /> Slow but workable for 8x8 boards.
 <?php
-$s = array(); $n = 3;
-//if( isset($_GET['n']) && is_numeric($_GET['n']) ) { $n = $_GET['n']; }
-print '<hr /> Method 1 Test run: ' . $n . ' runs, each run testing up to 1000 permutations.';
+
+$s = array();
+$n = 3;
+print '<hr /> Method 1 Test run: '.$n.' runs, each run testing up to 1000 permutations.';
 $start = startTimer();
-for( $i=0; $i < $n; $i++ ) { $solution = solve8queens(); if( $solution ) { $s[] = $solution; } }
+for ($i=0; $i < $n; $i++) {
+    $solution = solve8queens();
+    if ($solution) {
+        $s[] = $solution;
+    }
+}
 $end = end_timer();
 $s = array_unique($s);
 sort($s);
 print '<br /> Time: ' . $end . ' seconds';
 print '<br /> Results: ' . sizeof($s) . ' unique solutions found. (Click to view on chess board)<br /><pre>';
 print '<div style="border:1px solid black;padding:10px;height:70px;overflow:auto;">';
-foreach( $s as $sol ) { print '<a target="_sol" href="../?b=' . urlencode($sol) . '">' . $sol . '</a><br />'; }
+foreach ($s as $sol) {
+    print '<a target="_sol" href="../?b='.urlencode($sol).'">'.$sol.'</a><br />';
+}
 print '</div>';
 print '</pre><br /><hr />Method 1: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__ . '/../solve/solve8queens.php');
+highlight_file(__DIR__.'/../solve/solve8queens.php');
 print '</div>';
-
-
 
 print '<a name="2"></a>';
 print '<br /><br />
@@ -66,25 +72,23 @@ print '<br /><br />
 $start = startTimer();
 $s = solve8queens2();
 $end = end_timer();
-print '<br /> Time: ' . $end . ' seconds';
+print '<br /> Time: '.$end.' seconds';
 $sols = array();
-foreach( $s as $sol ) {
-  $b = renderBoard($sol,8);
-  $sols[] = '<a target="_sol" href="../?b=' . urlencode($b) . '">' . $b . '</a>';
+foreach ($s as $sol) {
+    $b = renderBoard($sol,8);
+    $sols[] = '<a target="_sol" href="../?b='.urlencode($b).'">'.$b.'</a>';
 }
 sort($sols);
-print '<br /> Results: ' . sizeof($sols) . ' unique solutions found. (Click to view on chess board)<br /><pre>';
+print '<br /> Results: '.sizeof($sols).' unique solutions found. (Click to view on chess board)<br /><pre>';
 print '<div style="border:1px solid black;padding:10px;height:200px;overflow:auto;">';
-foreach( $sols as $b ) {
-  print $b . '<br />';
+foreach ($sols as $b) {
+    print $b.'<br />';
 }
 print '</div>';
 print '</pre><br /><hr />Method 2: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__ . '/../solve/solve8queens_2.php');
+highlight_file(__DIR__.'/../solve/solve8queens_2.php');
 print '</div>';
-
-
 
 print '<a name="3"></a>
 <br /> <b>Method 3</b>: Hard code!
@@ -94,7 +98,7 @@ print '<a name="3"></a>
 <br /> Absolutely the fastest method ;)';
 print '<br /><hr />Method 3: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__ . '/../solve/solve8queens_3.php');
+highlight_file(__DIR__.'/../solve/solve8queens_3.php');
 print '</div>';
 print '</td></tr></table>';
 
@@ -102,12 +106,12 @@ $this->pageFooter();
 
 function startTimer() {
     global $stime;
-    $stime = microtime(1);
+    $stime = microtime(true);
 }
 
 function end_timer() {
     global $stime;
-    $end = microtime(1);
-    $diff = round( $end - $stime, 18);
+    $end = microtime(true);
+    $diff = round($end - $stime, 18);
     return round($diff,5);
 }

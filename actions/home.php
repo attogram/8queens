@@ -1,4 +1,4 @@
-<?php // 8queens - Home page v0.0.3
+<?php // 8queens - Home page v0.0.4
 
 $this->pageHeader('Play 8 Queens - the classic chess puzzle')
 
@@ -63,22 +63,23 @@ var cfg = {
  sparePieces: true,
 <?php
 
-  if( isset($_GET['solve']) ) {
-    include_once( __DIR__ . '/../solve/solve8queens.php' );
-    print ' position: ' . solve8queens() . ",\n";
-  } elseif( isset($_GET['b']) ) {
-    print ' position: ' . htmlentities($_GET['b']) . ",\n";
-  }
+if (isset($_GET['solve'])) {
+    include_once(__DIR__.'/../solve/solve8queens.php');
+    print ' position: '.solve8queens().",\n";
+} elseif (isset($_GET['b'])) {
+    print ' position: '.htmlentities($_GET['b']).",\n";
+}
+
 ?>
  onChange: onChange,
 };
 var board1 = new ChessBoard('board1', cfg);
 
-<?php if( isset($_GET['b']) ) { ?>
+<?php if (isset($_GET['b'])) { ?>
   onChange( board1.position(), board1.position() );
 <?php } ?>
 
-  <?php if( isset($_GET['solve']) ) { ?>
+  <?php if (isset($_GET['solve'])) { ?>
 jQuery('#status').html('<ul><li><span style="color:green;"><b>RANDOM SOLUTION FOUND!</b></span><li>8 Queens on board<li>0 Queens under attack</ul>');
 <?php } ?>
 

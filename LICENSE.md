@@ -1,6 +1,6 @@
 8queens License
 ==================
-[//]: # ( 8queens - License.md (markdown) - v0.0.2 )
+[//]: # ( 8queens - License.md (markdown) - v0.0.3 )
 
 8queens is an open source project.
 
@@ -8,11 +8,13 @@
 <a href="http://opensource.org/licenses/MIT">The MIT License</a> or the
 <a href="http://opensource.org/licenses/GPL-3.0">GNU General Public License</a>, at your choosing.
 
+The 8queens distribution includes <a href="#other">other open source projects</a>.
+
 <hr />
 
 <strong>8queens - MIT License</strong>
 
-Copyright (c) 2016 8queens Developers https://github.com/attogram/8queens/
+Copyright (c) 2016 8queens Developers <https://github.com/attogram/8queens/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +38,7 @@ THE SOFTWARE.
 
 <strong>8queens - GNU General Public License</strong>
 
-Copyright (C) 2016 8queens Developers https://github.com/attogram/8queens/
+Copyright (C) 2016 8queens Developers <https://github.com/attogram/8queens/>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -735,15 +737,18 @@ Public License instead of this License.  But first, please read
 &lt;<a href="http://www.gnu.org/philosophy/why-not-lgpl.html">http://www.gnu.org/philosophy/why-not-lgpl.html</a>&gt;.</p>
 
 
----
-The 8queens distribution includes other Open Source software:
+<a name="other"></a>
+<hr />
 
-* jQuery - MIT license - jquery.org/license
+Other Open Source Software included with the 8queens distribution:
+
+
+* jQuery - MIT license - <https://jquery.org/license>
 
 * chessboard.js - MIT license
 
 Copyright 2013 Chris Oakman
-http://chessboardjs.com/
+<http://chessboardjs.com/>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

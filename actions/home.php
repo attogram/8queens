@@ -1,5 +1,5 @@
 <?php
-// 8queens - Home page v0.0.5
+// 8queens - Home page v0.0.6
 
 $this->pageHeader('Play 8 Queens - the classic chess puzzle')
 
@@ -59,7 +59,7 @@ if (isset($_GET['solve'])) {
     include_once(__DIR__.'/../solve/solve8queens.php');
     print ' position: '.solve8queens().",\n";
 } elseif (isset($_GET['b'])) {
-    print ' position: '.htmlentities($_GET['b']).",\n";
+    print ' position: '.$this->webDisplay($this->request->query->get('b')).",\n";
 }
 
 ?>

@@ -1,7 +1,5 @@
 <?php
-// Attogram Framework - 8queens Module - Base Test v0.0.4
-
-namespace Attogram;
+// Attogram Framework - 8queens Module - Base Test v0.0.5
 
 use PHPUnit\Framework\TestCase;
 

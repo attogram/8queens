@@ -5,7 +5,7 @@ global $attacked;
 
 if (!isset($_GET['b']) || !$_GET['b']) {
     print 'ERROR - no move made';
-    exit;
+    $this->shutdown();
 }
 
 $board = @$_GET['b'];

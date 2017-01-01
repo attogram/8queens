@@ -14,7 +14,7 @@ The 8queens distribution includes <a href="#other">other open source projects</a
 
 <strong>8queens - MIT License</strong>
 
-Copyright (c) 2016 8queens Developers <https://github.com/attogram/8queens/>
+Copyright (c) 2017 8queens Developers <https://github.com/attogram/8queens/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ THE SOFTWARE.
 
 <strong>8queens - GNU General Public License</strong>
 
-Copyright (C) 2016 8queens Developers <https://github.com/attogram/8queens/>
+Copyright (C) 2017 8queens Developers <https://github.com/attogram/8queens/>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

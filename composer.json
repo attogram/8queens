@@ -1,11 +1,17 @@
 {
   "name": "attogram/8queens",
-  "description": "Play the 8 Queens puzzle. PHP7/Javascript",
+  "description": "8 Queens chess puzzle website. PHP 7, Javascript",
   "type": "project",
   "homepage": "https://github.com/attogram/8queens",
   "license": "(MIT or GPL-3.0+)",
   "require": {
-    "php": "^7.0"
+    "php": "^7.0",
+    "attogram/router": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Attogram\\8queens\\": "src/"
+    }
   },
   "keywords": [
     "8queens",

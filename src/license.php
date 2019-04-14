@@ -3,7 +3,7 @@
 
 namespace Attogram;
 
-$f = __DIR__.'/../LICENSE.md';
+$f = __DIR__ . '/../LICENSE.md';
 
 if (!is_readable($f)) {
     $this->log->error('license.php: file not found: '.$f);

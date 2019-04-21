@@ -97,7 +97,7 @@ print '<a name="3"></a>
 <br /> Absolutely the fastest method ;)';
 print '<br /><hr />Method 3: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file('/solve8queens_3.php');
+highlight_file('solve8queens_3.php');
 print '</div>';
 print '</td></tr></table>';
 

@@ -1,12 +1,6 @@
-<?php
-// 8queens - 92 Solutions page v0.0.3
-
-$this->pageHeader('92 solutions to the 8 Queens puzzle');
-
-?>
-<link rel="stylesheet" href="<?php print $this->path; ?>/web/cjs030/css/chessboard-0.3.0.css" />
-<script src="<?php print $this->path; ?>/web/cjs030/js/jquery-1.10.1.min.js"></script>
-<script src="<?php print $this->path; ?>/web/cjs030/js/chessboard-0.3.0.js"></script>
+<link rel="stylesheet" href="../inc/cjs030/css/chessboard-0.3.0.css" />
+<script src="../inc/cjs030/js/jquery-1.10.1.min.js"></script>
+<script src="../inc/cjs030/js/chessboard-0.3.0.js"></script>
 <table border="0" cellpadding="0" cellspacing="0">
  <tr>
  <td valign="top" style="padding:10px 20px 0px 30px;">
@@ -47,12 +41,10 @@ for ($x=1; $x <= 92; $x++) {
     $pos = list($a, $b, $c ,$d, $e, $f, $g, $h) = explode(',', $s[$x-1]);
     print '<div class="bb">'."$a, $b, $c, $d, $e, $f, $g".'<br /><div id="b'.$x.'" class="bb"></div></div>';
     print '<script>var b'.$x.' = new ChessBoard("b'.$x.'",'
-        .'{pieceTheme:"../web/img/{piece}.png",position:'
+        .'{pieceTheme:"../inc/{piece}.png",position:'
         ."{'$a':'wQ','$b':'wQ','$c':'wQ','$d':'wQ','$e':'wQ','$f':'wQ','$g':'wQ','$h':'wQ'}"
         .'});</script>';
 }
 ?>
 <br clear="all" />
 </td></tr></table>
-<?php
-$this->pageFooter();

@@ -1,27 +1,17 @@
 {
   "name": "attogram/8queens",
-  "description": "Play the 8 Queens puzzle. PHP / Javascript / Attogram Framework module",
+  "description": "8 Queens chess puzzle website. PHP 7, Javascript",
   "type": "project",
   "homepage": "https://github.com/attogram/8queens",
   "license": "(MIT or GPL-3.0+)",
   "require": {
-    "php": ">=5.3.3 || ^7.0"
+    "php": "^7.0",
+    "attogram/router": "^4.0"
   },
-  "require-dev": {
-      "phpunit/phpunit": "5.4.*"
-  },
-  "authors": [
-    {
-      "name": "8queens Developers",
-      "homepage": "https://github.com/attogram/8queens"
+  "autoload": {
+    "psr-4": {
+      "Attogram\\EightQueens\\": "src/"
     }
-  ],
-  "suggest": {
-    "attogram/attogram-framework": "The Attogram Framework",
-    "attogram/attogram-database": "Database Module for the Attogram Framework",
-    "attogram/attogram-user": "User Module for the Attogram Framework",
-    "attogram/attogram-info": "Info Module for the Attogram Framework",
-    "attogram/attogram-contactform": "Contact Form Module for the Attogram Framework"
   },
   "keywords": [
     "8queens",

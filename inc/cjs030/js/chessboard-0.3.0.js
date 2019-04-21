@@ -442,7 +442,7 @@ function expandConfig() {
   if (cfg.hasOwnProperty('pieceTheme') !== true ||
       (typeof cfg.pieceTheme !== 'string' &&
        typeof cfg.pieceTheme !== 'function')) {
-    cfg.pieceTheme = 'web/img/{piece}.png';
+    cfg.pieceTheme = 'inc/{piece}.png';
   }
 
   // animation speeds

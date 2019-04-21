@@ -1,13 +1,10 @@
 <?php
-// 8queens - Solutions page v0.0.6
 
 set_time_limit(120);
 
-include_once(__DIR__.'/../solve/solve8queens.php');
-include_once(__DIR__.'/../solve/solve8queens_2.php');
-include_once(__DIR__.'/../solve/solve8queens_3.php');
-
-$this->pageHeader('8 Queens - Solutions');
+include_once('solve8queens.php');
+include_once('solve8queens_2.php');
+include_once('solve8queens_3.php');
 
 ?>
 
@@ -26,13 +23,14 @@ There are <b><a href="../92/">92</a></b> solutions, but only <b>12</b> fundament
 board rotations and reflections.
 </p>
 
-<p><hr/></p>
+<br /><hr /><br />
+
 <ul>
 <li><a href="#1">Method 1 - Brute force with starting constraints</a>
 <li><a href="#2">Method 2 - Bitwise math, 12 fundamentals + rotation/reflection</a>
 <li><a href="#3">Method 3 - Hard code!</a>
 
-<p><hr/></p>
+<br /><hr /><br />
 
 <a name="1"></a>
 <br /> <b>Method 1</b>: Be lazy and use brute force.
@@ -62,7 +60,7 @@ foreach ($s as $sol) {
 print '</div>';
 print '</pre><br /><hr />Method 1: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__.'/../solve/solve8queens.php');
+highlight_file('solve8queens.php');
 print '</div>';
 
 print '<a name="2"></a>';
@@ -88,7 +86,7 @@ foreach ($sols as $b) {
 print '</div>';
 print '</pre><br /><hr />Method 2: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__.'/../solve/solve8queens_2.php');
+highlight_file('solve8queens_2.php');
 print '</div>';
 
 print '<a name="3"></a>
@@ -99,11 +97,10 @@ print '<a name="3"></a>
 <br /> Absolutely the fastest method ;)';
 print '<br /><hr />Method 3: PHP Code:<br />';
 print '<div style="border:1px solid black;padding:10px;height:300px;overflow:auto;">';
-highlight_file(__DIR__.'/../solve/solve8queens_3.php');
+highlight_file('solve8queens_3.php');
 print '</div>';
 print '</td></tr></table>';
 
-$this->pageFooter();
 
 function startTimer()
 {

@@ -1,8 +1,3 @@
-<?php
-// 8queens - About page v0.0.3
-
-$this->pageHeader('About the 8 Queens puzzle');
-?>
 <table border="0" cellpadding="0" cellspacing="0">
  <tr>
   <td valign="top" style="padding:10px 20px 0px 30px;">
@@ -45,5 +40,3 @@ $this->pageHeader('About the 8 Queens puzzle');
   </td>
  </tr>
 </table>
-<?php
-$this->pageFooter();

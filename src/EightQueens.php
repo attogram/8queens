@@ -39,7 +39,9 @@ class EightQueens
         $match = $this->router->match();
         if ($match && method_exists($this, $match)) {
             try {
+                $this->pageHeader();
                 $this->{$match}();
+                $this->pageFooter();
             } catch (Throwable $error) {
                 print "\nERROR: " . $error->getMessage();
             }
@@ -47,6 +49,16 @@ class EightQueens
             return;
         }
         die('404 Page Not Found');
+    }
+
+    protected function pageHeader()
+    {
+        include('header.php');
+    }
+
+    protected function pageFooter()
+    {
+        include('footer.php');
     }
 
     protected function home()

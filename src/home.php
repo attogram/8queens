@@ -17,7 +17,8 @@
     </ul>
    </div>
    <div class="body">
-    How to play the 8 Queens Puzzle:
+    <br />
+       How to play the 8 Queens Puzzle:
     <ul>
     <li>Drag 8 queens onto this chess board
     <li>No queen may be attacking another queen

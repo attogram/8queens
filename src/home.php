@@ -50,11 +50,11 @@ var cfg = {
 <?php
 
 if (isset($_GET['solve'])) {
-    include_once(__DIR__.'/solve8queens.php');
+    include_once('solve8queens.php');
     print ' position: '.solve8queens().",\n";
 } elseif (isset($_GET['b'])) {
-    // @TODO filter _GET
-    print ' position: '.$this->request->query->get('b').",\n";
+    // @TODO validate _GET[b]
+    print ' position: ' . htmlentities($_GET['b']) . ",\n";
 }
 
 ?>

@@ -1,11 +1,9 @@
 <?php
-// 8queens - AJAX status page v0.0.7
 
 global $attacked;
 
 if (!isset($_GET['b']) || !$_GET['b']) {
-    print 'ERROR - no move made';
-    $this->shutdown();
+    die('ERROR - no move made');
 }
 
 $board = @$_GET['b'];

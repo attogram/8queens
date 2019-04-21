@@ -1,12 +1,6 @@
-<?php
-// 8queens - Home page v0.0.6
-
-$this->pageHeader('Play 8 Queens - the classic chess puzzle')
-
-?>
-<link rel="stylesheet" href="<?php print $this->path; ?>/web/cjs030/css/chessboard-0.3.0.css" />
-<script src="<?php print $this->path; ?>/web/cjs030/js/jquery-1.10.1.min.js"></script>
-<script src="<?php print $this->path; ?>/web/cjs030/js/chessboard-0.3.0.js"></script>
+<link rel="stylesheet" href="inc/cjs030/css/chessboard-0.3.0.css" />
+<script src="inc/cjs030/js/jquery-1.10.1.min.js"></script>
+<script src="inc/cjs030/js/chessboard-0.3.0.js"></script>
 
 <table border="0" cellpadding="0" cellspacing="0" style="margin: 0px auto;">
  <tr>
@@ -56,10 +50,11 @@ var cfg = {
 <?php
 
 if (isset($_GET['solve'])) {
-    include_once(__DIR__.'/../solve/solve8queens.php');
+    include_once(__DIR__.'/solve8queens.php');
     print ' position: '.solve8queens().",\n";
 } elseif (isset($_GET['b'])) {
-    print ' position: '.$this->webDisplay($this->request->query->get('b')).",\n";
+    // @TODO filter _GET
+    print ' position: '.$this->request->query->get('b').",\n";
 }
 
 ?>
@@ -76,7 +71,7 @@ if (isset($_GET['solve'])) {
     print "jQuery('#status').html('<ul>"
         ."<li><span style=\"color:green;\"><b>RANDOM SOLUTION FOUND!</b></span></li>"
         ."<li>8 Queens on board</li>"
-        ."<li>0 Queens under attack<li>"
+        ."<li>0 Queens under attack</li>"
         ."</ul>');";
 }
 ?>
@@ -87,5 +82,3 @@ jQuery(".spare-pieces-7492f img[src$='wB.png']").remove();
 jQuery(".spare-pieces-7492f img[src$='wN.png']").remove();
 jQuery(".spare-pieces-7492f img[src$='wP.png']").remove();
 </script>
-<?php
-$this->pageFooter();

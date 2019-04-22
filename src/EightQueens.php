@@ -12,7 +12,7 @@ use function method_exists;
 class EightQueens
 {
     /** @var string Version */
-    const VERSION = '1.0.0-pre.2';
+    const VERSION = '1.0.0-pre.3';
 
     /** @var string Git Repository */
     const GIT_REPO = 'https://github.com/attogram/8queens';
@@ -39,9 +39,7 @@ class EightQueens
         $match = $this->router->match();
         if ($match && method_exists($this, $match)) {
             try {
-                $this->pageHeader();
                 $this->{$match}();
-                $this->pageFooter();
             } catch (Throwable $error) {
                 print "\nERROR: " . $error->getMessage();
             }
@@ -63,7 +61,9 @@ class EightQueens
 
     protected function home()
     {
+        $this->pageHeader();
         include('home.php');
+        $this->pageFooter();
     }
 
     protected function status()
@@ -73,16 +73,22 @@ class EightQueens
 
     protected function about()
     {
+        $this->pageHeader();
         include('about.php');
+        $this->pageFooter();
     }
 
     protected function solutions()
     {
+        $this->pageHeader();
         include('solutions.php');
+        $this->pageFooter();
     }
 
     protected function allSolutions()
     {
+        $this->pageHeader();
         include('92.php');
+        $this->pageFooter();
     }
 }
